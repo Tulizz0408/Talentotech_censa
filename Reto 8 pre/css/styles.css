@@ -1,0 +1,27 @@
+:root{
+    --green: rgb(0, 92, 46);
+    --green-lt:rgb(2, 134, 68);
+    --white: white;
+    --bg: rgb(187, 216, 201);
+    --radius: 8px;
+    --shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    --text: #333;
+    --footer-bg: rgba(0, 102, 51, 0.8);
+}
+body{
+    background-color: var(--bg);
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+}
+.container {
+    margin: 20px;
+    margin: 20px auto;
+    
+}
+
+#outputBox{
+    padding: 20px;
+    font-weight: bolder;
+
+}

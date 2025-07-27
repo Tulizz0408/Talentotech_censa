@@ -1,0 +1,110 @@
+:root{
+    --green: rgb(0, 92, 46);
+    --green-lt:rgb(2, 134, 68);
+    --white: white;
+    --bg: rgb(187, 216, 201);
+    --radius: 8px;
+    --shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    --text: #333;
+    --footer-bg: rgba(0, 102, 51, 0.8);
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color:var(--bg);
+    color: var(--text);
+    margin: 0;
+    padding: 0px;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+}
+.header {
+    background-color: var(--green);
+    color: var(--white);
+    padding: 20px;
+    text-align: center;
+}
+
+.form-container{
+    flex: 1;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 600px;
+    background-color: var(--white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+form fieldset {
+    border: 2px solid var(--green);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+form legend {
+    font-weight: bold;
+    color: var(--green);
+    font-size: 1.4em;
+    margin-bottom: 10px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    color: var(--text);
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+select{
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid var(--green);
+    border-radius: var(--radius);
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+input[type="radio"]{
+    margin-left: 20px;
+
+}
+
+.btn{
+    display: flex;
+    justify-content: center;
+}
+
+button[type="submit"] {
+    background-color: var(--green);
+    color: var(--white);
+    padding: 10px 20px;
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: var(--green-lt);
+}
+
+.footer{
+    background-color: var(--footer-bg);
+    color: var(--white);
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    font-size: 0.9em;
+}

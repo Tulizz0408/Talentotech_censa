@@ -10,9 +10,14 @@ body {
     }
    h2 {
     text-align: center;
+    margin-top: 0;
+    margin-bottom: 0;
    }
 }
 
+p{
+    font-size: 1.1em;
+}
 main{
     padding: 30px;
     margin-bottom: auto;
@@ -34,18 +39,18 @@ header {
     z-index: 1;
 }
 
-.item:nth-child(1){grid-area: item1;}
+/* .item:nth-child(1){grid-area: item1;}
 .item:nth-child(2){grid-area: item2;}
 .item:nth-child(3){grid-area: item3;}
 .item:nth-child(4){grid-area: item4;}
-.item:nth-child(5){grid-area: item5;}
+.item:nth-child(5){grid-area: item5;} */
 
 .layout-grid{
     display: grid;
     grid-template-columns: 1fr;
-    gap: 0px;
+    gap: 20px;
     padding: 0px;
-    height: 100vh;
+    height: 100vh;  
 }
 
 
@@ -77,6 +82,7 @@ header {
 
 .sidebar ul li {
     margin-bottom: 10px;
+    font-size: 1.2em;
 }
 
 .sidebar ul li a {
@@ -121,12 +127,12 @@ header {
     padding: 20px;
     margin-left: 300px;
     margin-right: 20px;  
-    grid-template-columns:repeat(3,1fr);
-    grid-template-areas: 
+    grid-template-columns:repeat(auto-fill, minmax(300px,1fr));
+    /* grid-template-areas: 
     "item1 item1 item1"
     "item2 item3 item4"
-    "item5 item5 item5";
-    grid-auto-rows: auto;
+    "item5 item5 item5"; */
+    grid-auto-rows: min-content;
 }
 
 .item{
@@ -150,16 +156,16 @@ img{
     width: 300px;
 }
 
-.imagen_galeria {
-    width: 300px;              /* o usa % si necesitas que sea responsive */
+.imagen_galeria{
+    border-radius: 50%;
+    box-shadow: #999;
     height: 300px;
-    border-radius: 50%;        /* hace que se vea circular */
-    object-fit: cover;         /* recorta la imagen sin deformarla */
-    border: 10px double black;
+    width: 300px;
     padding: 5px;
-    box-shadow: 0 0 10px #999;
+    border: black;
+    border-style: double;
+    border-width: 10px;
 }
-
 
 footer {
     grid-area: footer;
@@ -176,28 +182,42 @@ footer {
 */
 
 @media (max-width: 768px) {
+    p{font-size: 1.1em;}
+    h1{font-size: 1.5em;}
+    h2{font-size: 1.2em;}
     .layout-grid{
         grid-template-columns: 1fr;
-        height: max-content;
+        grid-template-areas: 
+        "header"
+        "sidebar"
+        "portfolio"
+        "footer";
+        height: auto;
+        grid-auto-rows: auto;
+    }
+    header{
+        position: relative;
+        grid-area: header;
     }
     .sidebar{
         position: relative;
+        height: fit-content;
         margin-top: 0;
         width: 100%;
-        height:max-content;
+        padding: 8px;
     }
+    .sidebar ul {
+        font-size: 1.1em
+    };
     .portfolio{
         margin-left: 20px;
         grid-template-columns: 1fr;
-        grid-template-areas:
-        "item1"
-        "item2"
-        "item3"
-        "item4"
-        "item5";
+        margin-left: auto;
+        padding-bottom: 40px;
+        grid-area: portfolio;
     }
     .footer{
-        position: fixed;
-        
+        position: relative;
+        grid-area: footer;
     }
 }
